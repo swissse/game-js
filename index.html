@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Игра "Исследователь"</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- ЭТОТ ФАЙЛ БЫЛ СДЕЛАН ЛИНЬКОВЫМ МАКСИМОМ ЕВГЕНЬЕВИЧЕМ ИСП-323Р -->
+
+<body>
+
+  <div id="game-container">
+
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <div id="ui-hud" class="screen hidden">
+      <div class="hud-item">Игрок: <span id="hud-name"></span></div>
+      <div class="hud-item">Время: <span id="hud-time">00:00</span></div>
+      <div class="hud-item">Заряд: <span id="hud-power">50</span>%</div>
+      <div class="power-bar">
+        <div id="power-fill"></div>
+      </div>
+    </div>
+
+    <div id="screen-welcome" class="screen active">
+      <h1>ИССЛЕДОВАТЕЛЬ</h1>
+      <p>Введите имя пилота:</p>
+      <input type="text" id="input-name" placeholder="Ваше имя" autocomplete="off">
+      <button id="btn-start" disabled>НАЧАТЬ ПОЛЕТ</button>
+      <p class="instruction">Управление: W (вверх), S (вниз), ESC (пауза)</p>
+    </div>
+
+    <div id="screen-result" class="screen hidden">
+      <h2>ЗАПИСЬ ЗАВЕРШЕНА</h2>
+      <p>Батарея разряжена.</p>
+      <p>Пилот: <span id="res-name"></span></p>
+      <p class="big-text">Время записи: <span id="res-time"></span></p>
+      <button class="btn-restart">РЕСТАРТ</button>
+    </div>
+
+    <div id="screen-loss" class="screen hidden">
+      <h2 style="color: #ff4444;">АВАРИЯ!</h2>
+      <p>Квадрокоптер разбился.</p>
+      <p class="big-text">Время полета: <span id="loss-time"></span></p>
+      <button class="btn-restart">РЕСТАРТ</button>
+    </div>
+
+    <div id="screen-pause" class="screen hidden" style="background: rgba(0,0,0,0.5);">
+      <h2>ПАУЗА</h2>
+      <p>Нажмите ESC, чтобы продолжить</p>
+    </div>
+
+  </div>
+
+  <script src="main.js">
+  </script>
+</body>
+
+</html>
